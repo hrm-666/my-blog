@@ -3,7 +3,14 @@
         <title>学习笔记 - 标签 - 马皓然的博客</title>
         <link>https://example.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <description>学习笔记 - 标签 - 马皓然的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Apr 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Apr 2026 22:50:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>DQN 学习笔记：从 Q 表到 CartPole 平衡杆实验</title>
+    <link>https://example.com/posts/reinforcement-learning/dqn-cartpole-note/</link>
+    <pubDate>Mon, 27 Apr 2026 22:50:00 &#43;0800</pubDate><author>
+        <name>马皓然</name>
+    </author><guid>https://example.com/posts/reinforcement-learning/dqn-cartpole-note/</guid>
+    <description><![CDATA[这篇文章整理我学习 DQN 的全过程：为什么需要 DQN、它和 Q-learning 的关系、关键公式怎么理解，以及我如何用 PyTorch 训练 CartPole 并录制推理效果。]]></description>
+</item><item>
     <title>Q-learning 学习笔记：从 Q 表到价值传播</title>
     <link>https://example.com/posts/reinforcement-learning/q-learning-note/</link>
     <pubDate>Mon, 27 Apr 2026 20:00:00 &#43;0800</pubDate><author>
