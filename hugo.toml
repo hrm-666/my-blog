@@ -1,5 +1,5 @@
 baseURL = "https://example.com/"
-title = "马皓然的博客"
+title = "然物志"
 theme = "DoIt"
 
 defaultContentLanguage = "zh-cn"
@@ -21,7 +21,7 @@ enableGitInfo = false
   tag = "tags"
 
 [params]
-  title = "马皓然的博客"
+  title = "然物志"
   description = "记录学习、生活和技术的一点东西"
   keywords = ["博客", "Hugo", "技术", "生活"]
   defaultTheme = "auto"
@@ -29,7 +29,7 @@ enableGitInfo = false
   enablePWA = false
 
 [params.author]
-  name = "马皓然"
+  name = "然物志"
   email = ""
   link = ""
   avatar = ""
@@ -38,7 +38,7 @@ enableGitInfo = false
   themeChangeMode = "switch"
 
 [params.header.title]
-  name = "马皓然的博客"
+  name = "然物志"
   logo = ""
   typeit = false
 
@@ -53,7 +53,7 @@ enableGitInfo = false
 [params.home.profile]
   enable = true
   avatarURL = ""
-  title = "马皓然的博客"
+  title = "然物志"
   subtitle = "记录学习、技术和生活里的小进展"
   typeit = false
   social = true
