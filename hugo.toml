@@ -1,0 +1,127 @@
+baseURL = "https://example.com/"
+title = "马皓然的博客"
+theme = "DoIt"
+
+defaultContentLanguage = "zh-cn"
+languageCode = "zh-CN"
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = false
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  title = "马皓然的博客"
+  description = "记录学习、生活和技术的一点东西"
+  keywords = ["博客", "Hugo", "技术", "生活"]
+  defaultTheme = "auto"
+  dateFormat = "2006-01-02"
+  enablePWA = false
+
+[params.author]
+  name = "马皓然"
+  email = ""
+  link = ""
+  avatar = ""
+
+[params.header]
+  themeChangeMode = "switch"
+
+[params.header.title]
+  name = "马皓然的博客"
+  logo = ""
+  typeit = false
+
+[params.footer]
+  enable = true
+  hugo = true
+  copyright = true
+  author = true
+  since = 2026
+  license = ""
+
+[params.home.profile]
+  enable = true
+  avatarURL = ""
+  title = "马皓然的博客"
+  subtitle = "记录学习、技术和生活里的小进展"
+  typeit = false
+  social = true
+  disclaimer = "慢慢写，认真想。"
+
+[params.home.posts]
+  enable = true
+  paginate = 6
+
+[params.search]
+  enable = true
+  type = "fuse"
+  contentLength = 4000
+  maxResultLength = 10
+  snippetLength = 50
+
+[params.page]
+  hiddenFromHomePage = false
+  hiddenFromSearch = false
+  twemoji = false
+  lightgallery = true
+  ruby = true
+  fraction = true
+  fontawesome = false
+  linkToMarkdown = false
+  rssFullText = false
+
+[params.page.toc]
+  enable = true
+  keepStatic = false
+  auto = true
+
+[params.page.code]
+  copy = true
+  maxShownLines = 50
+
+[params.page.share]
+  enable = false
+
+[params.page.comment]
+  enable = false
+
+[params.social]
+  GitHub = ""
+  Email = ""
+  Bilibili = ""
+  Zhihu = ""
+
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "categories"
+  name = "分类"
+  url = "/categories/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 4

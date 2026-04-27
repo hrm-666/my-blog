@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 马皓然的博客</title>
+        <link>https://example.com/posts/</link>
+        <description>所有文章 | 马皓然的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Apr 2026 18:00:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>第一篇文章</title>
+    <link>https://example.com/posts/hello-world/</link>
+    <pubDate>Mon, 27 Apr 2026 18:00:00 &#43;0800</pubDate><author>
+        <name>马皓然</name>
+    </author><guid>https://example.com/posts/hello-world/</guid>
+    <description><![CDATA[<p>这是这个博客的第一篇文章。</p>
+<p>现在站点已经接入了 Hugo 和 DoIt 主题，可以开始写作、整理笔记，或者把学习过程沉淀成一篇篇文章。</p>
+<h2 id="接下来可以写什么" class="headerLink">
+    <a href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%8f%af%e4%bb%a5%e5%86%99%e4%bb%80%e4%b9%88" class="header-mark"></a>接下来可以写什么</h2><ul>
+<li>最近学到的新知识</li>
+<li>做项目时踩过的坑</li>
+<li>读书、课程或论文笔记</li>
+<li>生活里的观察和想法</li>
+</ul>]]></description>
+</item><item>
+    <title>强化学习学习笔记：从这里开始</title>
+    <link>https://example.com/posts/reinforcement-learning/getting-started/</link>
+    <pubDate>Mon, 27 Apr 2026 18:00:00 &#43;0800</pubDate><author>
+        <name>马皓然</name>
+    </author><guid>https://example.com/posts/reinforcement-learning/getting-started/</guid>
+    <description><![CDATA[<p>这篇文章可以作为强化学习栏目的第一篇笔记。</p>
+<h2 id="计划记录的内容" class="headerLink">
+    <a href="#%e8%ae%a1%e5%88%92%e8%ae%b0%e5%bd%95%e7%9a%84%e5%86%85%e5%ae%b9" class="header-mark"></a>计划记录的内容</h2><ul>
+<li>强化学习的基本问题设定</li>
+<li>状态、动作、奖励、策略和价值函数</li>
+<li>马尔可夫决策过程</li>
+<li>动态规划、蒙特卡洛和时序差分方法</li>
+<li>Q-learning、SARSA、DQN、策略梯度和 Actor-Critic</li>
+<li>论文阅读和代码实验</li>
+</ul>
+<h2 id="学习时可以关注的问题" class="headerLink">
+    <a href="#%e5%ad%a6%e4%b9%a0%e6%97%b6%e5%8f%af%e4%bb%a5%e5%85%b3%e6%b3%a8%e7%9a%84%e9%97%ae%e9%a2%98" class="header-mark"></a>学习时可以关注的问题</h2><p>强化学习的核心不是只记公式，而是理解智能体如何在环境中通过试错学习长期收益最大化的行为策略。</p>]]></description>
+</item></channel>
+</rss>
