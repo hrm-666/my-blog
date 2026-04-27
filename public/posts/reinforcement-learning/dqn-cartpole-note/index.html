@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" ><title>DQN 学习笔记：从 Q 表到 CartPole 平衡杆实验 - 然物志</title><meta name="Description" content="记录我学习 DQN 的完整过程：从 Q-learning 的局限，到 DQN 的公式理解、Replay Buffer、Target Network，再到用 PyTorch 训练 CartPole 平衡杆。"><meta property="og:url" content="https://example.com/posts/reinforcement-learning/dqn-cartpole-note/">
+    <meta name="robots" content="noodp" ><title>DQN 学习笔记：从 Q 表到 CartPole 平衡杆实验 - 然物志</title><meta name="Description" content="记录我学习 DQN 的完整过程：从 Q-learning 的局限，到 DQN 的公式理解、Replay Buffer、Target Network，再到用 PyTorch 训练 CartPole 平衡杆。"><meta property="og:url" content="http://localhost:1313/posts/reinforcement-learning/dqn-cartpole-note/">
   <meta property="og:site_name" content="然物志">
   <meta property="og:title" content="DQN 学习笔记：从 Q 表到 CartPole 平衡杆实验">
   <meta property="og:description" content="记录我学习 DQN 的完整过程：从 Q-learning 的局限，到 DQN 的公式理解、Replay Buffer、Target Network，再到用 PyTorch 训练 CartPole 平衡杆。">
@@ -29,15 +29,15 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="canonical" href="https://example.com/posts/reinforcement-learning/dqn-cartpole-note/" ><link rel="prev" href="https://example.com/posts/reinforcement-learning/q-learning-note/" >
+<link rel="canonical" href="http://localhost:1313/posts/reinforcement-learning/dqn-cartpole-note/" ><link rel="prev" href="http://localhost:1313/posts/reinforcement-learning/q-learning-note/" >
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "DQN 学习笔记：从 Q 表到 CartPole 平衡杆实验",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://example.com/posts/reinforcement-learning/dqn-cartpole-note/"
+            "@id": "http://localhost:1313/posts/reinforcement-learning/dqn-cartpole-note/"
         },"genre": "posts","keywords":["强化学习","DQN","CartPole","PyTorch","学习笔记"],"wordcount":  4299 ,
-        "url": "https://example.com/posts/reinforcement-learning/dqn-cartpole-note/","datePublished": "2026-04-27T22:50:00+08:00","dateModified": "2026-04-27T22:50:00+08:00","publisher": {
+        "url": "http://localhost:1313/posts/reinforcement-learning/dqn-cartpole-note/","datePublished": "2026-04-27T22:50:00+08:00","dateModified": "2026-04-27T22:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": "然物志"},"author": {
                 "@type": "Person",
@@ -161,6 +161,7 @@
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#最终效果">最终效果</a></li>
     <li><a href="#从-q-learning-到-dqn">从 Q-learning 到 DQN</a></li>
     <li><a href="#dqn-的网络到底输出什么">DQN 的网络到底输出什么</a></li>
@@ -175,7 +176,6 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
-    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -195,6 +195,7 @@
             <div class="toc-content"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#最终效果">最终效果</a></li>
     <li><a href="#从-q-learning-到-dqn">从 Q-learning 到 DQN</a></li>
     <li><a href="#dqn-的网络到底输出什么">DQN 的网络到底输出什么</a></li>
@@ -209,7 +210,6 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
-    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -245,6 +245,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#最终效果">最终效果</a></li>
     <li><a href="#从-q-learning-到-dqn">从 Q-learning 到 DQN</a></li>
     <li><a href="#dqn-的网络到底输出什么">DQN 的网络到底输出什么</a></li>
@@ -259,7 +260,6 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
-    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -373,6 +373,11 @@
   <p>当 Q 表存不下时，用神经网络来近似 Q 函数。</p>
 
 </blockquote><p>这篇笔记主要记录我学习 DQN 的全过程，从背后的想法、公式理解，到最后用 PyTorch 训练一个 CartPole 平衡杆模型。</p>
+<h2 id="配套代码" class="headerLink">
+    <a href="#%e9%85%8d%e5%a5%97%e4%bb%a3%e7%a0%81" class="header-mark"></a>配套代码</h2><p>这篇文章对应的训练脚本、推理脚本和后续强化学习实验代码，我会逐步整理到这个仓库里：</p>
+<ul>
+<li><a href="https://github.com/hrm-666/rl-learning" target="_blank" rel="noopener noreferrer">rl-learning：强化学习代码与实验记录</a></li>
+</ul>
 <h2 id="最终效果" class="headerLink">
     <a href="#%e6%9c%80%e7%bb%88%e6%95%88%e6%9e%9c" class="header-mark"></a>最终效果</h2><p>先放一下训练后模型的推理效果。这里小车会根据当前状态选择向左或向右移动，让杆子尽量保持平衡。</p>
 <p><img class="tw:inline" loading="lazy" src='/videos/dqn-cartpole-inference.gif'   alt="DQN 训练后的 CartPole 推理效果"  ></p>
@@ -3782,11 +3787,6 @@
 </span></span><span style="display:flex;"><span>)</span></span></code></pre>
 </div>
 <p>这样做的好处是，不仅能看到小车最后能不能稳住杆子，还能看到网络每一步到底更偏向哪个动作。</p>
-<h2 id="配套代码" class="headerLink">
-    <a href="#%e9%85%8d%e5%a5%97%e4%bb%a3%e7%a0%81" class="header-mark"></a>配套代码</h2><p>这篇文章对应的训练脚本、推理脚本和后续强化学习实验代码，我会逐步整理到这个仓库里：</p>
-<ul>
-<li><a href="https://github.com/hrm-666/rl-learning" target="_blank" rel="noopener noreferrer">rl-learning：强化学习代码与实验记录</a></li>
-</ul>
 <p>目前这篇文章主要对应 DQN 训练 CartPole 的部分。后面如果继续写 Double DQN、Dueling DQN 或者 PPO，我也会尽量把博客和代码放在一起，方便复盘。</p>
 <h2 id="这次实验里我最有感觉的点" class="headerLink">
     <a href="#%e8%bf%99%e6%ac%a1%e5%ae%9e%e9%aa%8c%e9%87%8c%e6%88%91%e6%9c%80%e6%9c%89%e6%84%9f%e8%a7%89%e7%9a%84%e7%82%b9" class="header-mark"></a>这次实验里我最有感觉的点</h2><p>第一，DQN 并不是一个和 Q-learning 完全割裂的新东西。它仍然在学 <code>Q(s, a)</code>，只是把“查表”换成了“网络估计”。</p>

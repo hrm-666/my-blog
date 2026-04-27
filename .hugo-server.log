@@ -29,3 +29,9 @@ Change of config file detected, rebuilding site (#2).
 2026-04-27 23:18:42.299 +0800
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Rebuilt in 610 ms
+
+Change detected, rebuilding site (#3).
+2026-04-27 23:33:52.302 +0800
+Source changed /posts/reinforcement-learning/dqn-cartpole-note.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 348 ms
