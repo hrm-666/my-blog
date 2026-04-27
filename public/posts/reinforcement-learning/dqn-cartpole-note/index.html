@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://example.com/posts/reinforcement-learning/dqn-cartpole-note/"
-        },"genre": "posts","keywords":["强化学习","DQN","CartPole","PyTorch","学习笔记"],"wordcount":  4166 ,
+        },"genre": "posts","keywords":["强化学习","DQN","CartPole","PyTorch","学习笔记"],"wordcount":  4299 ,
         "url": "https://example.com/posts/reinforcement-learning/dqn-cartpole-note/","datePublished": "2026-04-27T22:50:00+08:00","dateModified": "2026-04-27T22:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": "然物志"},"author": {
@@ -175,6 +175,7 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -208,6 +209,7 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -231,7 +233,7 @@
             <div class="post-meta-line"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2026-04-27">2026-04-27</time>&nbsp;<svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2026-04-27">2026-04-27</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 4166 字&nbsp;
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 4299 字&nbsp;
                     <svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;预计阅读 19 分钟&nbsp;</div>
         </div><div class="details toc tw:print:block!" id="toc-static" data-kept="">
@@ -257,6 +259,7 @@
     <li><a href="#一次训练回合发生了什么">一次训练回合发生了什么</a></li>
     <li><a href="#评估和保存模型">评估和保存模型</a></li>
     <li><a href="#推理和录制-gif">推理和录制 GIF</a></li>
+    <li><a href="#配套代码">配套代码</a></li>
     <li><a href="#这次实验里我最有感觉的点">这次实验里我最有感觉的点</a></li>
     <li><a href="#容易记错的地方">容易记错的地方</a>
       <ul>
@@ -3779,6 +3782,12 @@
 </span></span><span style="display:flex;"><span>)</span></span></code></pre>
 </div>
 <p>这样做的好处是，不仅能看到小车最后能不能稳住杆子，还能看到网络每一步到底更偏向哪个动作。</p>
+<h2 id="配套代码" class="headerLink">
+    <a href="#%e9%85%8d%e5%a5%97%e4%bb%a3%e7%a0%81" class="header-mark"></a>配套代码</h2><p>这篇文章对应的训练脚本、推理脚本和后续强化学习实验代码，我会逐步整理到这个仓库里：</p>
+<ul>
+<li><a href="https://github.com/hrm-666/rl-learning" target="_blank" rel="noopener noreferrer">rl-learning：强化学习代码与实验记录</a></li>
+</ul>
+<p>目前这篇文章主要对应 DQN 训练 CartPole 的部分。后面如果继续写 Double DQN、Dueling DQN 或者 PPO，我也会尽量把博客和代码放在一起，方便复盘。</p>
 <h2 id="这次实验里我最有感觉的点" class="headerLink">
     <a href="#%e8%bf%99%e6%ac%a1%e5%ae%9e%e9%aa%8c%e9%87%8c%e6%88%91%e6%9c%80%e6%9c%89%e6%84%9f%e8%a7%89%e7%9a%84%e7%82%b9" class="header-mark"></a>这次实验里我最有感觉的点</h2><p>第一，DQN 并不是一个和 Q-learning 完全割裂的新东西。它仍然在学 <code>Q(s, a)</code>，只是把“查表”换成了“网络估计”。</p>
 <p>第二，神经网络不是直接输出动作，而是输出每个动作的价值。这个区别很关键，因为它决定了 DQN 仍然是 value-based 方法，而不是 policy-based 方法。</p>

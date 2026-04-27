@@ -24,3 +24,8 @@ Press Ctrl+C to stop
 Change of Static files detected, rebuilding site (#1).
 2026-04-27 22:56:36.799 +0800
 Syncing \videos\dqn-cartpole-inference.gif to \
+
+Change of config file detected, rebuilding site (#2).
+2026-04-27 23:18:42.299 +0800
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 610 ms
