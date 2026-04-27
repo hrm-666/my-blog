@@ -57,7 +57,7 @@ enableGitInfo = false
   subtitle = "记录学习、技术和生活里的小进展"
   typeit = false
   social = true
-  disclaimer = "慢慢写，认真想。"
+  disclaimer = "从心所欲，不逾矩"
 
 [params.home.posts]
   enable = true
@@ -97,8 +97,10 @@ enableGitInfo = false
   enable = false
 
 [params.social]
-  GitHub = ""
-  Email = ""
+  # Replace these placeholders with your own account IDs.
+  GitHub = "hrm-666"
+  Email = "mhaoran695@gmail.com"
+  QQ = "1716973316"
   Bilibili = ""
   Zhihu = ""
 

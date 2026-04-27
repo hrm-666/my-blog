@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>FrozenLake - 标签 - 马皓然的博客</title>
+        <link>https://example.com/tags/frozenlake/</link>
+        <description>FrozenLake - 标签 - 马皓然的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Apr 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/frozenlake/" rel="self" type="application/rss+xml" /><item>
+    <title>Q-learning 学习笔记：从 Q 表到价值传播</title>
+    <link>https://example.com/posts/reinforcement-learning/q-learning-note/</link>
+    <pubDate>Mon, 27 Apr 2026 20:00:00 &#43;0800</pubDate><author>
+        <name>马皓然</name>
+    </author><guid>https://example.com/posts/reinforcement-learning/q-learning-note/</guid>
+    <description><![CDATA[这篇笔记从 Q 表、更新公式和 FrozenLake 例子出发，整理我对 Q-learning 的第一轮理解。]]></description>
+</item></channel>
+</rss>
