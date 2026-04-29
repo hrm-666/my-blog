@@ -16,6 +16,16 @@ enableGitInfo = false
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)']]
+
 [taxonomies]
   category = "categories"
   tag = "tags"
@@ -80,6 +90,12 @@ enableGitInfo = false
   fontawesome = false
   linkToMarkdown = false
   rssFullText = false
+
+[params.page.math]
+  enable = true
+  copyTex = true
+  mhchem = true
+  mathjax = false
 
 [params.page.toc]
   enable = true

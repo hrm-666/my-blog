@@ -1,0 +1,28 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# Hugo local runtime files
+/.hugo_build.lock
+/.hugo-server.log
+/.hugo-server.err.log
+
+# Dependency directories
+/node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc logs
+*.log
