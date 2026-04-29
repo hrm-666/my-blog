@@ -1,0 +1,11 @@
+{
+  "name": "my-blog",
+  "private": true,
+  "scripts": {
+    "build": "hugo --gc --minify",
+    "dev": "hugo server --buildFuture"
+  },
+  "devDependencies": {
+    "hugo-extended": "0.160.1"
+  }
+}
